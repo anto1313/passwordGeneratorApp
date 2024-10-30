@@ -1,0 +1,96 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      h1 {
+        color: #2c3e50;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .input-group {
+        margin-bottom: 1rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #34495e;
+      }
+      input[type="number"],
+      input[type="text"] {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #bdc3c7;
+        border-radius: 4px;
+      }
+      button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #2980b9;
+      }
+      #password-container {
+        display: flex;
+        margin-top: 1rem;
+      }
+      #password {
+        flex-grow: 1;
+        margin-right: 0.5rem;
+      }
+      #copy {
+        flex-shrink: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Generator</h1>
+      <div class="input-group">
+        <label for="length">Password Length:</label>
+        <input type="number" id="length" min="8" max="32" value="12" />
+        <div
+          id="strength-indicator"
+          style="
+            height: 10px;
+            width: 100%;
+            background-color: gray;
+            margin-top: 0.5rem;
+          "
+        ></div>
+      </div>
+      <div class="input-group">
+        <label for="url">URL (optional):</label>
+        <input type="text" id="url" />
+      </div>
+      <button id="generate">Generate Password</button>
+      <div id="password-container">
+        <input type="text" id="password" readonly />
+        <button id="copy">Copy</button>
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
